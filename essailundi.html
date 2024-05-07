@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimisation des Itinéraires de Livraison</title>
+    <!-- Inclure les bibliothèques CSS nécessaires -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #map { height: 700px; }
+    </style>
+        <script src="js.js"></script>
+</head>
+<body>
+    <h1>Optimisation des Itinéraires de Livraison</h1>
+    
+    <div id="map"></div>
+    <form id="route-form">
+        <label for="source">Noeud de départ:</label>
+        <input type="text" id="source" name="source" required>
+        <label for="target">Noeud de destination:</label>
+        <input type="text" id="target" name="target" required>
+        <select id="algorithm" name="algorithm">
+            <option value="dijkstra">Dijkstra</option>
+            <option value="bellman_ford">Bellman-Ford</option>
+            <option value="dfs">Recherche en Profondeur</option>
+            <option value="bfs">Recherche en Largeur</option>
+        </select>
+        <button type="submit">Optimiser l'itinéraire</button>
+    </form>
+    <div id="result"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
