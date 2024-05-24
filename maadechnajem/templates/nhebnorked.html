@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimization App</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map { height: 400px; }
+        #controls { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Optimization App</h1>
+    <div id="controls">
+        <label for="algorithm">Choose an algorithm:</label>
+        <select id="algorithm">
+            <option value="dijkstra">Dijkstra</option>
+            <option value="bellman-ford">Bellman-Ford</option>
+            <!-- Add more algorithms as needed -->
+        </select>
+    </div>
+    <div id="map"></div>
+    <div id="result"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='nhebnorked.js') }}"></script>
+</body>
+</html>
